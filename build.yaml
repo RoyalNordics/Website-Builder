@@ -1,0 +1,40 @@
+project: UI-Fixer AI
+description: |
+  Et værktøj der tager AI-genereret HTML eller design (fra Galileo, Sketch, Figma, screenshots eller tekst-prompt) og konverterer det til et fuldt funktionelt, tilgængeligt og produktionsklart UI. 
+  Bygget med en no-code frontend (Roo) og en analyse-backend i Codespace.
+
+phases:
+  - name: Initial Setup
+    description: Initial opsætning af kodebase, mapper og boilerplate i Codespace
+    tasks:
+      - Opret mapper: /frontend, /backend, /shared
+      - Installer dependencies (f.eks. Flask eller Express, samt HTML parser)
+      - Konfigurer GitHub Codespace miljø
+
+  - name: HTML Analyzer
+    description: Byg backend-service som kan analysere og forbedre AI-genereret HTML
+    tasks:
+      - Lav API-endpoint `/analyze` som modtager HTML som input
+      - Udfør parsing, identifikation af mangler, forslag til forbedringer
+      - Returnér forbedret HTML og liste over rettelser
+
+  - name: Roo Integration
+    description: Byg frontend-flow i Roo
+    tasks:
+      - Upload-komponent med HTML-drag/drop
+      - Kald backend-analyse via webhook/API
+      - Preview af resultat
+      - Mulighed for at downloade forbedret HTML
+
+  - name: Testing & Export
+    description: Test hele flowet og lav eksportfunktioner
+    tasks:
+      - Upload test-HTML fra Galileo
+      - Tjek rettelser
+      - Aktivér download/export-knap
+
+  - name: Deployment (Optional)
+    description: Valgfri udrulning til Vercel/Netlify eller integration med CMS
+    tasks:
+      - Deploy backend som API
+      - Eksportfunktioner til Webflow/WordPress

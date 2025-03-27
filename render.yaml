@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: html-analyzer-backend
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/main.py
+    repo: <din-github-url-her>  # <- udskift hvis nødvendigt
+    autoDeploy: true
+    envVars:
+      - key: FLASK_ENV
+        value: development
+      - key: PORT
+        value: 10000
